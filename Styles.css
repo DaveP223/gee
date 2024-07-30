@@ -1,128 +1,139 @@
-/* General styles for the page */
-body, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-/* Header styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile-pic {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
-    border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
 .welcome-img {
-    width: 100%;
-    max-width: 600px; /* Adjust size as needed */
-    height: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the header */
 }
 
-/* Main content styles */
 main {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-/* Workouts section styles */
-.workouts, .events {
-    flex: 1;
-    margin: 10px;
+section {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
-.workouts h2, .events h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 #workout-list {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
-#workout-input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+#workout-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
 }
 
-#add-workout {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+#workout-input, #event-form input {
+  width: calc(100% - 110px);
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
 }
 
-/* Events section styles */
+button {
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button.remove, button.edit {
+  background-color: #dc3545;
+}
+
+button.remove:hover, button.edit:hover {
+  background-color: #c82333;
+}
+
 .slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
 }
 
-#event-slides {
-    display: flex;
-    overflow: hidden;
+.event-slide {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.slideshow-container .prev, .slideshow-container .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-.slideshow-container .prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.slideshow-container .next {
-    right: 0;
-    border-radius: 3px 3px 0 0;
-}
-
-#event-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-#event-form input, #event-form button {
-    margin: 5px 0;
-    padding: 10px;
-}
-
-#add-event {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }

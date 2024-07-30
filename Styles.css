@@ -33,9 +33,8 @@ header {
 }
 
 .welcome-img {
-  max-width: 100%;
+  flex: 0 0 25%; /* Takes up 25% of the header width */
   height: auto;
-  object-fit: cover; /* Ensures the image covers the header */
 }
 
 main {

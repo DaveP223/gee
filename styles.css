@@ -28,10 +28,8 @@ html, body {
   z-index: -1; /* Ensure the image is behind other elements */
 }
 
-
-
 .container-fluid {
-  z-index: 2;
+  z-index: 1; /* Changed from 2 to 1 */
   display: flex;
   align-items: center;
 }

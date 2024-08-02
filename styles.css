@@ -25,32 +25,15 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1; /* Ensure the image is behind other elements */
+  z-index: -1; /* Ensure the image is behind other elements */
 }
 
-.container-fluid {
-  z-index: 1; /* Changed from 2 to 1 */
-  display: flex;
-  align-items: center;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col-lg-7, .col-md-10 {
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: 100%;
-}
-
-.col-lg-7 {
-  max-width: 58.333333%;
-}
-
-.col-md-10 {
-  max-width: 83.333333%;
+.content-container {
+  position: relative; /* Make sure the content is positioned relative to the header */
+  z-index: 1; /* Ensure content is above background image */
+  text-align: center; /* Center-align text and button */
+  color: #fff; /* Apply white color to text */
+  padding: 0 15px; /* Add some padding to the left and right */
 }
 
 .display-2 {
